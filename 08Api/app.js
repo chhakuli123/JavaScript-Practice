@@ -11,13 +11,12 @@ function myFunc() {
   fetch(url)
     .then((res) => res.json())
     .then((data) => {
-      data.results.map((firstname) => {
-        if (firstname.dob.age > 45) {
+      data.results.map((element) => {
+        if (element.dob.age > 45) {
           para2.style.color = "red";
-          para2.innerText = ` The name of user is ${firstname.name.first} and age is ${firstname.dob.age}\n`;
+          para2.innerText += ` The name of user is ${element.name.first} and age is ${element.dob.age}\n`;
         } else {
-          para.style.color = "black";
-          para.innerText = ` The name of user is ${firstname.name.first} and age is ${firstname.dob.age}\n`;
+          para.innerText += ` The name of user is ${element.name.first} and age is ${element.dob.age}\n`;
         }
       });
     });
